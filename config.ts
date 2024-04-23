@@ -7,14 +7,14 @@ import { TokenMetadata } from "./types";
 
 // Solana address you wish to receive fees
 export const PLATFORM_CREATOR_ADDRESS = new PublicKey(
-  "GzzWXXDjLD4FDwDkWB5sARjC2aaLSfCQDjx3dmpoTY7K",
+  "8aMbqzYBu7PStyQMy3axeZhxJ4gtaTFk9xoQ1ZVwsGKw",
 );
 
 // Creator fee (in %)
-export const PLATFORM_CREATOR_FEE = 0.05; // 5% (5/100 = 0.05)
+export const PLATFORM_CREATOR_FEE = 0.10; // 5% (5/100 = 0.05)
 
 // Jackpot fee (in %)
-export const PLATFORM_JACKPOT_FEE = 0.01; // 1% (1/100 = 0.01)
+export const PLATFORM_JACKPOT_FEE = 0.02; // 1% (1/100 = 0.01)
 
 // Platform URL - Appears in ShareModal
 export const PLATFORM_SHARABLE_URL = "play-gamba.vercel.app";
@@ -49,13 +49,12 @@ export const TOKENLIST = [
   },
   // GUAC
   {
-    mint: new PublicKey("AZsHEMXd36Bj1EMNXhowJajpUXzrKcK57wW4ZGXVa7yR"),
-    name: "Guacamole",
-    symbol: "GUAC",
-    image:
-      "https://bafkreiccbqs4jty2yjvuxp5x7gzgepquvv657ttauaqgxfhxghuz5us54u.ipfs.nftstorage.link/",
-    decimals: 5,
-    baseWager: 2000000e5,
+    mint: new PublicKey("85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ"),
+    symbol: 'W',
+    name: 'Wormhole',
+    image: "https://img.fotofolio.xyz/?url=https%3A%2F%2Fwormhole.com%2Ftoken.png&width=200",
+    decimals: 6,
+    baseWager: 1 * 1e6,
   },
   // ADD NEW TOKENS HERE
   // USE TOKEN LAYOUT FOR LAYOUT STRUCTURE
