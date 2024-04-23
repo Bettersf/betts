@@ -1,3 +1,5 @@
+// src/components/sections/Header.tsx
+
 import {
   GambaUi,
   TokenValue,
@@ -14,9 +16,9 @@ import TokenSelect from "../ui/TokenSelect";
 import { UserButton } from "../ui/UserButton";
 
 export default function Header() {
-  const pool = useCurrentPool(); // Fetching pool data
+  const pool = useCurrentPool();
   const token = useCurrentToken();
-  const balance = useTokenBalance(); // Fetching token balance data
+  const balance = useTokenBalance();
   const [bonusHelp, setBonusHelp] = useState(false);
   const [jackpotHelp, setJackpotHelp] = useState(false);
 
@@ -84,15 +86,13 @@ export default function Header() {
           </div>
         </Modal>
       )}
-      <div className="flex items-center justify-between w-full p-2 bg-gray-900 fixed top-0 left-0 z-50 backdrop-blur-[20px]">
+      <div className="flex items-center justify-between w-full p-2.5 bg-gray-900 fixed top-0 left-0 z-50 backdrop-blur-[20px]">
         <div className="flex gap-5 items-center">
           <Link href="/" passHref>
-            <div className="h-16 m-0 cursor-pointer">
-              <img alt="Gamba logo" src="/DogeBets.png" className="h-full w-auto" />
+            <div className="h-9 m-0 cursor-pointer">
+              <img alt="Gamba logo" src="/logo.svg" className="h-full" />
             </div>
           </Link>
-          <GambaUi.Button className="headerButton">$DOGE</GambaUi.Button>
-          <GambaUi.Button className="headerButton">STAKING (TBA)</GambaUi.Button>
         </div>
         <div className="max-sm:text-xs max-sm:gap-1 flex gap-2.5 items-center relative">
           {pool.jackpotBalance > 0 && (
