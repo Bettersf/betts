@@ -20,7 +20,7 @@
   --gamba-ui-button-main-background-hover: #9564ff;
 
   --gamba-ui-input-background: #0e0e16;
-  --gamba-ui-input-color: #ffffff;
+  --gamba-ui-input-color: hwb(236 15% 29%);
   --gamba-ui-input-background-hover: #11111d;
 }
 
@@ -248,4 +248,37 @@ body::-webkit-scrollbar-thumb {
   max-width: 500px;
   aspect-ratio: 1;
   margin: auto;
+}
+
+/* Background gradient animation for WelcomeBanner */
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: animateGradient 10s linear infinite;
+}
+
+/* Neon Colors */
+.headerButton {
+  background-color: #f90;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.headerButton:hover {
+  background-color: #ff0;
 }
