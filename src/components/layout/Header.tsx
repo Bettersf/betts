@@ -1,12 +1,21 @@
+import {
+  GambaUi,
+  TokenValue,
+  useCurrentPool,
+  useCurrentToken,
+  useTokenBalance,
+  useUserBalance,
+} from "gamba-react-ui-v2";
 import React, { useState } from "react";
+
 import Link from "next/link";
 import { Modal } from "@/components/ui/Modal";
 import TokenSelect from "../ui/TokenSelect";
 import { UserButton } from "../ui/UserButton";
-import { TokenValue, GambaUi, useCurrentPool, useTokenBalance } from "gamba-react-ui-v2";
 
 export default function Header() {
   const pool = useCurrentPool(); // Fetching pool data
+  const token = useCurrentToken();
   const balance = useTokenBalance(); // Fetching token balance data
   const [bonusHelp, setBonusHelp] = useState(false);
   const [jackpotHelp, setJackpotHelp] = useState(false);
