@@ -1,4 +1,3 @@
-// src/pages/_app.tsx
 import "@/styles/globals.css";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
@@ -36,13 +35,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     process.env.NEXT_PUBLIC_RPC_ENDPOINT ??
     "https://api.mainnet-beta.solana.com";
 
-  return (
-    <ConnectionProvider
-      endpoint={RPC_ENDPOINT}
-      config={{ commitment: "processed" }}
+    return (
+    <div
+      style={{
+        backgroundImage: 'url("/galaxy.png")',
+        backgroundSize: "cover", // Adjust the size here (e.g., "50%", "contain", "cover")
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        overflow: "hidden",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat", // Prevent image from repeating
+      }}
     >
-      <WalletProvider autoConnect wallets={[]}>
-        <WalletModalProvider>
+      <ConnectionProvider
+        endpoint={RPC_ENDPOINT}
+        config={{ commitment: "processed" }}
+      >
+        <WalletProvider autoConnect wallets={[]}>
           <TokenMetaProvider tokens={TOKENLIST}>
             <GambaProvider>
               <GambaPlatformProvider
@@ -64,9 +73,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               </GambaPlatformProvider>
             </GambaProvider>
           </TokenMetaProvider>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
+        </WalletProvider>
+      </ConnectionProvider>
+    </div>
   );
 }
 
